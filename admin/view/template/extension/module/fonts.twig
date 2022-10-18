@@ -1,0 +1,207 @@
+{{ header }}{{ column_left }}
+<div id="content">
+  <div class="page-header">
+    <div class="container-fluid">
+      <div class="pull-right">
+        <button type="submit" form="form-module" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+        <a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a></div>
+      <h1>{{ heading_title }}</h1>
+      <ul class="breadcrumb">
+        {% for breadcrumb in breadcrumbs %}
+        <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="container-fluid">
+    {% if error_warning %}
+    <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    {% endif %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-pencil"></i> {{ text_edit }}</h3>
+      </div>
+      <div class="panel-body">
+        <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-module" class="form-horizontal">
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-h1-font">{{ entry_h1_font_style }}</label>
+            <div class="col-sm-10">
+              <select name="module_font_style_h1" id="input-h1-font" class="form-control" style="font-size:16px; height: 16%;">
+                {% if module_font_style_h1 %}
+                <option value="{{ module_font_style_h1 }}" style="font-family: {{ module_font_style_h1 }}" slected>{{module_font_style_h1}}</option>
+                {% endif %}
+                <option value="Montserrat" style="font-family: Montserrat">Montserrat</option>
+                <option value="Merriweather" style="font-family: Merriweather">Merriweather</option>
+                <option value="Josefin Sans" style="font-family: Josefin Sans">Josefin Sans</option>
+                <option value="Arvo" style="font-family: Arvo">Arvo</option>
+                <option value="Raleway" style="font-family: Raleway">Raleway</option>
+                <option value="Catamaran" style="font-family: Catamaran">Catamaran</option>
+                <option value="PT Sans" style="font-family: PT Sans">PT Sans</option>
+                <option value="Open Sans" style="font-family: Open Sans">Open Sans</option>
+                <option value="Roboto Slab" style="font-family: Roboto Slab">Roboto Slab</option>
+                <option value="Ubuntu" style="font-family: Ubuntu">Ubuntu</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-h2-font">{{ entry_h2_font_style }}</label>
+            <div class="col-sm-10">
+              <select name="module_font_style_h2" id="input-h2-font" class="form-control" style="font-size:16px; height: 16%;">
+                {% if module_font_style_h2 %}
+                <option value="{{ module_font_style_h2 }}" style="font-family: {{ module_font_style_h2 }}" slected>{{module_font_style_h2}}</option>
+                {% endif %}
+                <option value="Montserrat" style="font-family: Montserrat">Montserrat</option>
+                <option value="Merriweather" style="font-family: Merriweather">Merriweather</option>
+                <option value="Josefin Sans" style="font-family: Josefin Sans">Josefin Sans</option>
+                <option value="Arvo" style="font-family: Arvo">Arvo</option>
+                <option value="Raleway" style="font-family: Raleway">Raleway</option>
+                <option value="Catamaran" style="font-family: Catamaran">Catamaran</option>
+                <option value="PT Sans" style="font-family: PT Sans">PT Sans</option>
+                <option value="Open Sans" style="font-family: Open Sans">Open Sans</option>
+                <option value="Roboto Slab" style="font-family: Roboto Slab">Roboto Slab</option>
+                <option value="Ubuntu" style="font-family: Ubuntu">Ubuntu</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-h3-font">{{ entry_h3_font_style }}</label>
+            <div class="col-sm-10">
+              <select name="module_font_style_h3" id="input-h3-font" class="form-control" style="font-size:16px; height: 16%;">
+                {% if module_font_style_h3 %}
+                <option value="{{ module_font_style_h3 }}" style="font-family: {{ module_font_style_h3 }}" slected>{{module_font_style_h3}}</option>
+                {% endif %}
+                <option value="Montserrat" style="font-family: Montserrat">Montserrat</option>
+                <option value="Merriweather" style="font-family: Merriweather">Merriweather</option>
+                <option value="Josefin Sans" style="font-family: Josefin Sans">Josefin Sans</option>
+                <option value="Arvo" style="font-family: Arvo">Arvo</option>
+                <option value="Raleway" style="font-family: Raleway">Raleway</option>
+                <option value="Catamaran" style="font-family: Catamaran">Catamaran</option>
+                <option value="PT Sans" style="font-family: PT Sans">PT Sans</option>
+                <option value="Open Sans" style="font-family: Open Sans">Open Sans</option>
+                <option value="Roboto Slab" style="font-family: Roboto Slab">Roboto Slab</option>
+                <option value="Ubuntu" style="font-family: Ubuntu">Ubuntu</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-h4-font">{{ entry_h4_font_style }}</label>
+            <div class="col-sm-10">
+              <select name="module_font_style_h4" id="input-h4-font" class="form-control" style="font-size:16px; height: 16%;">
+                {% if module_font_style_h4 %}
+                <option value="{{ module_font_style_h4 }}" style="font-family: {{ module_font_style_h4 }}" slected>{{module_font_style_h4}}</option>
+                {% endif %}
+                <option value="Montserrat" style="font-family: Montserrat">Montserrat</option>
+                <option value="Merriweather" style="font-family: Merriweather">Merriweather</option>
+                <option value="Josefin Sans" style="font-family: Josefin Sans">Josefin Sans</option>
+                <option value="Arvo" style="font-family: Arvo">Arvo</option>
+                <option value="Raleway" style="font-family: Raleway">Raleway</option>
+                <option value="Catamaran" style="font-family: Catamaran">Catamaran</option>
+                <option value="PT Sans" style="font-family: PT Sans">PT Sans</option>
+                <option value="Open Sans" style="font-family: Open Sans">Open Sans</option>
+                <option value="Roboto Slab" style="font-family: Roboto Slab">Roboto Slab</option>
+                <option value="Ubuntu" style="font-family: Ubuntu">Ubuntu</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-h5-font">{{ entry_h5_font_style }}</label>
+            <div class="col-sm-10">
+              <select name="module_font_style_h5" id="input-h5-font" class="form-control" style="font-size:16px; height: 16%;">
+                {% if module_font_style_h5 %}
+                <option value="{{ module_font_style_h5 }}" style="font-family: {{ module_font_style_h5 }}" slected>{{module_font_style_h5}}</option>
+                {% endif %}
+                <option value="Montserrat" style="font-family: Montserrat">Montserrat</option>
+                <option value="Merriweather" style="font-family: Merriweather">Merriweather</option>
+                <option value="Josefin Sans" style="font-family: Josefin Sans">Josefin Sans</option>
+                <option value="Arvo" style="font-family: Arvo">Arvo</option>
+                <option value="Raleway" style="font-family: Raleway">Raleway</option>
+                <option value="Catamaran" style="font-family: Catamaran">Catamaran</option>
+                <option value="PT Sans" style="font-family: PT Sans">PT Sans</option>
+                <option value="Open Sans" style="font-family: Open Sans">Open Sans</option>
+                <option value="Roboto Slab" style="font-family: Roboto Slab">Roboto Slab</option>
+                <option value="Ubuntu" style="font-family: Ubuntu">Ubuntu</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-h6-font">{{ entry_h6_font_style }}</label>
+            <div class="col-sm-10">
+              <select name="module_font_style_h6" id="input-h6-font" class="form-control" style="font-size:16px; height: 16%;">
+                {% if module_font_style_h6 %}
+                <option value="{{ module_font_style_h6 }}" style="font-family: {{ module_font_style_h6 }}" slected>{{module_font_style_h6}}</option>
+                {% endif %}
+                <option value="Montserrat" style="font-family: Montserrat">Montserrat</option>
+                <option value="Merriweather" style="font-family: Merriweather">Merriweather</option>
+                <option value="Josefin Sans" style="font-family: Josefin Sans">Josefin Sans</option>
+                <option value="Arvo" style="font-family: Arvo">Arvo</option>
+                <option value="Raleway" style="font-family: Raleway">Raleway</option>
+                <option value="Catamaran" style="font-family: Catamaran">Catamaran</option>
+                <option value="PT Sans" style="font-family: PT Sans">PT Sans</option>
+                <option value="Open Sans" style="font-family: Open Sans">Open Sans</option>
+                <option value="Roboto Slab" style="font-family: Roboto Slab">Roboto Slab</option>
+                <option value="Ubuntu" style="font-family: Ubuntu">Ubuntu</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-p-font">{{ entry_p_font_style }}</label>
+            <div class="col-sm-10">
+              <select name="module_font_style_p" id="input-p-font" class="form-control" style="font-size:16px; height: 16%;">
+                {% if module_font_style_p %}
+                <option value="{{ module_font_style_p }}" style="font-family: {{ module_font_style_p }}" slected>{{module_font_style_p}}</option>
+                {% endif %}
+                <option value="Montserrat" style="font-family: Montserrat">Montserrat</option>
+                <option value="Merriweather" style="font-family: Merriweather">Merriweather</option>
+                <option value="Josefin Sans" style="font-family: Josefin Sans">Josefin Sans</option>
+                <option value="Arvo" style="font-family: Arvo">Arvo</option>
+                <option value="Raleway" style="font-family: Raleway">Raleway</option>
+                <option value="Catamaran" style="font-family: Catamaran">Catamaran</option>
+                <option value="PT Sans" style="font-family: PT Sans">PT Sans</option>
+                <option value="Open Sans" style="font-family: Open Sans">Open Sans</option>
+                <option value="Roboto Slab" style="font-family: Roboto Slab">Roboto Slab</option>
+                <option value="Ubuntu" style="font-family: Ubuntu">Ubuntu</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{{ footer }}
+<script type="text/javascript"><!--
+{% if module_font_style_h1 %}
+  var font = '{{ module_font_style_h1 }}';
+  $('#input-h1-font').css('font-family',font)
+{% endif %}
+{% if module_font_style_h2 %}
+  var font = '{{ module_font_style_h2 }}';
+  $('#input-h2-font').css('font-family',font)
+{% endif %}
+{% if module_font_style_h3 %}
+  var font = '{{ module_font_style_h3 }}';
+  $('#input-h3-font').css('font-family',font)
+{% endif %}
+{% if module_font_style_h4 %}
+  var font = '{{ module_font_style_h4 }}';
+  $('#input-h4-font').css('font-family',font)
+{% endif %}
+{% if module_font_style_h5 %}
+  var font = '{{ module_font_style_h5 }}';
+  $('#input-h5-font').css('font-family',font)
+{% endif %}
+{% if module_font_style_h6 %}
+  var font = '{{ module_font_style_h6 }}';
+  $('#input-h6-font').css('font-family',font)
+{% endif %}
+{% if module_font_style_p %}
+  var font = '{{ module_font_style_p }}';
+  $('#input-p-font').css('font-family',font)
+{% endif %}
+
+$('#input-h1-font, #input-h2-font, #input-h3-font, #input-h4-font, #input-h5-font, #input-h6-font, #input-p-font').on("change",function(){
+  $(this).css('font-family',$(this).val())
+});
+//--></script>
